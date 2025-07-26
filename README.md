@@ -1,97 +1,208 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# AlarmApp
 
-# Getting Started
+A minimalistic iOS alarm app built with React Native, designed to replicate the functionality of the default iOS Clock app's alarm feature.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Features
 
-## Step 1: Start Metro
+- 📱 Interactive alarm list with add/delete functionality
+- ⏰ Time picker for setting alarms
+- 🔄 Repeat options for alarms
+- 🏷️ Custom alarm labels
+- 🔊 Sound selection
+- 😴 Snooze toggle
+- ✏️ Edit mode for managing alarms
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Prerequisites
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+Before you begin, ensure you have the following installed:
+
+### Required Software
+- **Node.js** (v18 or higher)
+- **npm** or **yarn**
+- **Xcode** (latest version from App Store)
+- **iOS Simulator** (comes with Xcode)
+- **CocoaPods** (for iOS dependencies)
+
+### Xcode Setup
+
+1. **Install Xcode from the App Store**
+   - Download and install the latest version of Xcode
+   - This includes iOS Simulator and development tools
+
+2. **Install Xcode Command Line Tools**
+   ```sh
+   xcode-select --install
+   ```
+
+3. **Accept Xcode License**
+   ```sh
+   sudo xcodebuild -license accept
+   ```
+
+4. **Set Xcode Path** (if needed)
+   ```sh
+   sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+   ```
+
+5. **Install iOS Simulator**
+   - Open Xcode
+   - Go to Xcode → Preferences → Components
+   - Download the latest iOS Simulator
+
+## Getting Started
+
+### 1. Clone the Repository
 
 ```sh
-# Using npm
+git clone https://github.com/<your-username>/AlarmApp.git
+cd AlarmApp
+```
+
+### 2. Install Dependencies
+
+```sh
+# Install Node.js dependencies
+npm install
+
+# Install iOS dependencies (CocoaPods)
+cd ios
+pod install
+cd ..
+```
+
+### 3. Start Metro Bundler
+
+```sh
+# Start the Metro bundler
 npm start
-
-# OR using Yarn
-yarn start
+# or
+npx react-native start
 ```
 
-## Step 2: Build and run your app
+### 4. Run the App
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
+In a new terminal window:
 
 ```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+# Run on iOS Simulator
 npm run ios
-
-# OR using Yarn
-yarn ios
+# or
+npx react-native run-ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### 5. Alternative: Run from Xcode
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+1. Open `ios/AlarmApp.xcworkspace` in Xcode
+2. Select your target device (iOS Simulator or physical device)
+3. Click the "Run" button (▶️) or press `Cmd + R`
 
-## Step 3: Modify your app
+## Development Workflow
 
-Now that you have successfully run the app, let's make changes!
+### Hot Reload
+- The app will automatically reload when you save changes
+- Press `Cmd + R` in the simulator to manually reload
+- Press `Cmd + D` to open the developer menu
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+### Debugging
+- Use React Native Debugger or Chrome DevTools
+- Check Metro bundler console for JavaScript errors
+- Check Xcode console for native errors
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+## Project Structure
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+```
+AlarmApp/
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── screens/        # App screens
+│   ├── navigation/     # Navigation configuration
+│   └── theme/          # Styling and theming
+├── ios/                # iOS native code
+├── android/            # Android native code (not used for iOS development)
+└── package.json        # Dependencies and scripts
+```
 
-## Congratulations! :tada:
+## Branches
 
-You've successfully run and modified your React Native App. :partying_face:
+- `main`: Production-ready code
+- `DEV_himanshu`: Himanshu's development branch
+- `DEV_Satyam`: Satyam's development branch
 
-### Now what?
+## Contributing
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+### For Team Members
 
-# Troubleshooting
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/<your-username>/AlarmApp.git
+   cd AlarmApp
+   ```
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+2. **Switch to your development branch**
+   ```sh
+   git checkout DEV_himanshu    # or DEV_Satyam
+   ```
 
-# Learn More
+3. **Create a feature branch** (optional)
+   ```sh
+   git checkout -b feature/your-feature-name
+   ```
 
-To learn more about React Native, take a look at the following resources:
+4. **Make your changes and commit**
+   ```sh
+   git add .
+   git commit -m "Add your feature description"
+   ```
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+5. **Push to your branch**
+   ```sh
+   git push origin DEV_himanshu    # or your feature branch
+   ```
+
+6. **Create a Pull Request** to merge into `main`
+
+### Code Style
+
+- Use TypeScript for all new code
+- Follow React Native best practices
+- Use functional components with hooks
+- Keep components small and focused
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Metro bundler not connecting**
+   - Ensure Metro is running (`npm start`)
+   - Check if the simulator can reach your computer's IP
+
+2. **Build errors**
+   - Clean build: `cd ios && xcodebuild clean && cd ..`
+   - Reset cache: `npx react-native start --reset-cache`
+
+3. **Pod install issues**
+   - Update CocoaPods: `sudo gem install cocoapods`
+   - Clean pods: `cd ios && pod deintegrate && pod install && cd ..`
+
+4. **Xcode build errors**
+   - Clean build folder in Xcode (Product → Clean Build Folder)
+   - Check that all dependencies are properly linked
+
+### Getting Help
+
+- Check the [React Native documentation](https://reactnative.dev/docs/getting-started)
+- Review the [Troubleshooting guide](https://reactnative.dev/docs/troubleshooting)
+- Check Metro bundler console for JavaScript errors
+- Check Xcode console for native errors
+
+## Tech Stack
+
+- **React Native** 0.80.1
+- **React** 19.1.0
+- **TypeScript** 5.0.4
+- **React Navigation** 7.x
+- **React Native Paper** (planned for UI components)
+
+## License
+
+This project is for educational purposes and learning iOS app development with React Native.

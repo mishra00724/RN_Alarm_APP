@@ -73,3 +73,24 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# macOS system files
+.AppleDouble
+.LSOverride
+
+# VSCode settings
+.vscode/
+
+# React Native packager (Expo)
+.expo/
+.expo-shared/
+
+# Watchman
+.watchmanconfig
+
+# Logs
+*.log
+
+# Misc
+.env
+.env.*
